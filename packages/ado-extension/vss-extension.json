@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "umbraco-pr-preview",
   "name": "Umbraco PR Preview",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "publisher": "Moriyama",
   "public": true,
   "description": "Renders changed uSync and Umbraco Deploy data types and document types in a pull request tab, using the real Umbraco backoffice editors, side by side with the target branch.",
@@ -11,6 +11,11 @@
   "galleryFlags": ["Preview"],
   "targets": [{ "id": "Microsoft.VisualStudio.Services" }],
   "icons": { "default": "images/icon.png" },
+  "repository": { "type": "git", "uri": "https://github.com/Moriyama-Umbraco/umbraco-pr-preview" },
+  "links": {
+    "support": { "uri": "https://github.com/Moriyama-Umbraco/umbraco-pr-preview/issues" },
+    "license": { "uri": "https://github.com/Moriyama-Umbraco/umbraco-pr-preview/blob/main/LICENSE" }
+  },
   "content": { "details": { "path": "overview.md" } },
   "scopes": ["vso.code"],
   "files": [

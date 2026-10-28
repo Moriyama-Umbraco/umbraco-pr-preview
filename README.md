@@ -90,3 +90,7 @@ When adding a major, copy `renderers/v18`. Update `src/packages.ts` from `CORE_P
 - **Property descriptions** aren't shown beside labels in the wide (side-label) layout. They do appear when the label is stacked on top. Description changes are still flagged in the change badges.
 - **Content and media items** (uSync `Content/`, `Media/`) are not previewed yet. Deploy repositories don't store content in git.
 - **Bundle size**: each renderer is about 27 MB on disk, about 1.6 MB gzipped on initial load. Monaco and the localization files make up most of it.
+
+## License
+
+[MIT](LICENSE)
