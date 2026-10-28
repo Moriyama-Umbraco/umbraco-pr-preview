@@ -1,0 +1,94 @@
+{
+  "Name": "Landing Page",
+  "Alias": "landingPage",
+  "AllowedTemplates": [
+    "umb://template/97df1a2b3c4d4e5fa6b7c8d9e0f1a2b3"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-home color-green",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "AllowedChildContentTypes": [
+      "umb://document-type/102e9699044e45ff9d099f9d636ec6f9"
+    ],
+    "AllowedAtRoot": true
+  },
+  "Parent": "umb://document-type-container/69c5ddb8b153430bbc9d94786c492182",
+  "DefaultTemplate": "umb://template/97df1a2b3c4d4e5fa6b7c8d9e0f1a2b3",
+  "CompositionContentTypes": [
+    "umb://document-type/bc368f8a99c54629826a54d1737d3091"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "3e000000-0001-4a00-8000-000000000001",
+      "Name": "Content",
+      "Type": 1,
+      "Alias": "content",
+      "PropertyTypes": []
+    },
+    {
+      "Key": "3e000000-0001-4a00-8000-000000000002",
+      "Name": "Hero",
+      "Alias": "content/hero",
+      "PropertyTypes": [
+        {
+          "Key": "3d000000-0001-4a00-8000-000000000001",
+          "Alias": "hero",
+          "DataType": "umb://data-type/3726dfae1b2c4d3e8f4a5b6c7d8e9f01",
+          "ValueType": "System.String",
+          "Name": "Hero"
+        },
+        {
+          "Key": "3d000000-0001-4a00-8000-000000000002",
+          "Alias": "intro",
+          "DataType": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+          "ValueType": "System.String",
+          "Name": "Intro",
+          "SortOrder": 1,
+          "Description": "Short summary shown under the hero",
+          "Mandatory": true
+        }
+      ]
+    },
+    {
+      "Key": "3e000000-0001-4a00-8000-000000000003",
+      "Name": "Settings",
+      "SortOrder": 10,
+      "Type": 1,
+      "Alias": "settings",
+      "PropertyTypes": [
+        {
+          "Key": "3d000000-0001-4a00-8000-000000000003",
+          "Alias": "umbracoNaviHide",
+          "DataType": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+          "ValueType": "System.Boolean",
+          "Name": "Hide From Navigation"
+        }
+      ]
+    },
+    {
+      "Key": "3e000000-0001-4a00-8000-000000000004",
+      "Name": "Call to action",
+      "SortOrder": 1,
+      "Alias": "content/cta",
+      "PropertyTypes": [
+        {
+          "Key": "3d000000-0001-4a00-8000-000000000005",
+          "Alias": "ctaLabel",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "ValueType": "System.String",
+          "Name": "Call To Action Label",
+          "Description": "Max 40 characters",
+          "Validation": "^.{0,40}$",
+          "ValidationMessage": "Keep it under 40 characters",
+          "LabelOnTop": true
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/102e9699044e45ff9d099f9d636ec6f9",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "17.2.1"
+}

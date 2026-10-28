@@ -1,0 +1,36 @@
+{
+  "Name": "Hero Block",
+  "Alias": "heroBlock",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-picture color-blue",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "AllowedChildContentTypes": [],
+    "IsElementType": true
+  },
+  "Parent": "umb://document-type-container/25ca235b070148c8af7250aa25a9d201",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "808d1326-0001-4a00-8000-000000000001",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "1552cf3a-0001-4a00-8000-000000000001",
+          "Alias": "title",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "ValueType": "System.String",
+          "Name": "Title",
+          "Mandatory": true
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/4f92f9060a1b4c2d9e3fa4b5c6d7e8f9",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "17.2.1"
+}

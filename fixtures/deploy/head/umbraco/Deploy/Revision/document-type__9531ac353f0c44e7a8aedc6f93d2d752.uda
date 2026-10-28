@@ -1,0 +1,36 @@
+{
+  "Name": "Quote Block",
+  "Alias": "quoteBlock",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-quote color-black",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "AllowedChildContentTypes": [],
+    "IsElementType": true
+  },
+  "Parent": "umb://document-type-container/25ca235b070148c8af7250aa25a9d201",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "808d1326-0002-4a00-8000-000000000001",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "1552cf3a-0002-4a00-8000-000000000001",
+          "Alias": "quote",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "ValueType": "System.String",
+          "Name": "Quote",
+          "Mandatory": true
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/9531ac353f0c44e7a8aedc6f93d2d752",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "17.2.1"
+}

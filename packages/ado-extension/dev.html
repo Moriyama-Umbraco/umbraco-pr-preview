@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Umbraco preview – fixtures</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0 16px;
+				background: #fff;
+				font-family: 'Segoe UI', system-ui, sans-serif;
+			}
+			.bar {
+				display: flex;
+				gap: 12px;
+				padding: 8px 0;
+				font-size: 13px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bar">Fixture set: <a href="?set=usync">uSync</a> <a href="?set=deploy">Deploy</a></div>
+		<upr-compare-app></upr-compare-app>
+		<script type="module" src="./src/dev.ts"></script>
+	</body>
+</html>

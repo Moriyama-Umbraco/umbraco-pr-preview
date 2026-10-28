@@ -1,0 +1,35 @@
+{
+  "Name": "[Block List] - Hero",
+  "EditorAlias": "Umbraco.BlockList",
+  "EditorUiAlias": "Umb.PropertyEditorUi.BlockList",
+  "Configuration": {
+    "blocks": [
+      {
+        "contentElementTypeKey": "4f92f906-0a1b-4c2d-9e3f-a4b5c6d7e8f9",
+        "label": "Hero: {=title} ({=subtitle})"
+      },
+      {
+        "contentElementTypeKey": "9531ac35-3f0c-44e7-a8ae-dc6f93d2d752",
+        "label": "Quote"
+      }
+    ],
+    "validationLimit": {
+      "min": 0,
+      "max": 2
+    },
+    "useSingleBlockMode": false,
+    "useLiveEditing": false
+  },
+  "Udi": "umb://data-type/3726dfae1b2c4d3e8f4a5b6c7d8e9f01",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/4f92f9060a1b4c2d9e3fa4b5c6d7e8f9"
+    },
+    {
+      "Udi": "umb://document-type/9531ac353f0c44e7a8aedc6f93d2d752"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.2.1",
+  "DatabaseType": "Ntext"
+}

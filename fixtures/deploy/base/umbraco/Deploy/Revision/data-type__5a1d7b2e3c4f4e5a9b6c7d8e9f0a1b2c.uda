@@ -1,0 +1,17 @@
+{
+  "Name": "Legacy Dropdown",
+  "EditorAlias": "Umbraco.DropDown.Flexible",
+  "EditorUiAlias": "Umb.PropertyEditorUi.Dropdown",
+  "Configuration": {
+    "multiple": false,
+    "items": [
+      "Small",
+      "Medium",
+      "Large"
+    ]
+  },
+  "Udi": "umb://data-type/5a1d7b2e3c4f4e5a9b6c7d8e9f0a1b2c",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.2.1"
+}

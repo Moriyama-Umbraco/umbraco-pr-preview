@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["vite/client"],
+    // renderer-shared is linked into node_modules; preserving the link path makes its imports resolve against this
+    // renderer's pinned @umbraco-cms/backoffice (mirrors resolve.dedupe in the Vite config).
+    "preserveSymlinks": true,
+    "paths": {
+      "@umbraco-cms/internal/*": ["./node_modules/@umbraco-cms/backoffice/dist-cms/*"]
+    }
+  },
+  "include": ["src", "vite.config.ts", "node_modules/@az-umbraco-preview/renderer-shared/src"]
+}

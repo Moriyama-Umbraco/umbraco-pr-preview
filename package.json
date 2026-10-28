@@ -1,0 +1,21 @@
+{
+  "name": "az-umbraco-preview",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "postinstall": "npm install --prefix renderers/v17 && npm install --prefix renderers/v18",
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present && npm run typecheck --prefix renderers/v17 && npm run typecheck --prefix renderers/v18",
+    "build:renderers": "npm run build --prefix renderers/v17 && npm run build --prefix renderers/v18",
+    "package": "npm run build:renderers && npm run package -w packages/ado-extension"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "playwright": "^1.62.0"
+  }
+}

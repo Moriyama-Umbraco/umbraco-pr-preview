@@ -1,0 +1,14 @@
+{
+  "name": "@az-umbraco-preview/renderer-shared",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Lit views and backoffice host shared by the per-major renderers. Consumed as source; each renderer aliases @umbraco-cms/backoffice to its own pinned version.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*"
+  },
+  "dependencies": {
+    "@az-umbraco-preview/core": "*"
+  }
+}

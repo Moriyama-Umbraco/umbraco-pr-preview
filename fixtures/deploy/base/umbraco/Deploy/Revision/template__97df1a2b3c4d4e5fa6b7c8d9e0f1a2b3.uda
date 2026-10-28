@@ -1,0 +1,9 @@
+{
+  "Name": "Landing Page",
+  "Alias": "LandingPage",
+  "File": "umb://template-file/LandingPage.cshtml",
+  "Udi": "umb://template/97df1a2b3c4d4e5fa6b7c8d9e0f1a2b3",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "17.2.1"
+}

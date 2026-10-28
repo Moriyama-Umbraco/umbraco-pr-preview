@@ -1,0 +1,26 @@
+{
+  "name": "@az-umbraco-preview/ado-extension",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/copy-renderers.mjs",
+    "typecheck": "tsc -p .",
+    "package": "npm run build && tfx extension create --manifest-globs vss-extension.json --output-path ../../out --rev-version",
+    "package:dev": "npm run build && tfx extension create --manifest-globs vss-extension.json --overrides-file overrides.dev.json --output-path ../../out --rev-version"
+  },
+  "dependencies": {
+    "@az-umbraco-preview/core": "*",
+    "azure-devops-extension-api": "^5.280.1",
+    "azure-devops-extension-sdk": "^4.2.0",
+    "diff": "^9.0.0",
+    "fflate": "^0.8.3",
+    "lit": "^3.3.3"
+  },
+  "devDependencies": {
+    "tfx-cli": "^0.24.2",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.7"
+  }
+}

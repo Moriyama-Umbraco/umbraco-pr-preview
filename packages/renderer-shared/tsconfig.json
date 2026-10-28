@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["vite/client"],
+    "paths": {
+      "@umbraco-cms/internal/*": ["../../renderers/v17/node_modules/@umbraco-cms/backoffice/dist-cms/*"]
+    }
+  },
+  "include": ["src"]
+}

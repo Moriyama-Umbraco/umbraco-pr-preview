@@ -1,0 +1,50 @@
+{
+  "Name": "SEO Meta",
+  "Alias": "seoMeta",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-search color-black",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "2b000000-0001-4a00-8000-000000000001",
+      "Name": "SEO",
+      "SortOrder": 90,
+      "Type": 1,
+      "Alias": "seo",
+      "PropertyTypes": []
+    },
+    {
+      "Key": "2b000000-0001-4a00-8000-000000000002",
+      "Name": "Meta",
+      "Alias": "seo/meta",
+      "PropertyTypes": [
+        {
+          "Key": "2a000000-0001-4a00-8000-000000000001",
+          "Alias": "metaTitle",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "ValueType": "System.String",
+          "Name": "Meta Title",
+          "Description": "Shown in search engine results"
+        },
+        {
+          "Key": "2a000000-0001-4a00-8000-000000000002",
+          "Alias": "metaDescription",
+          "DataType": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+          "ValueType": "System.String",
+          "Name": "Meta Description",
+          "SortOrder": 1
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/bc368f8a99c54629826a54d1737d3091",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "17.2.1"
+}
