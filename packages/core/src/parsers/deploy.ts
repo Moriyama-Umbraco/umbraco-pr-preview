@@ -7,7 +7,7 @@ import type {
 	SchemaSnapshot,
 	SourceRef,
 } from '../model.js';
-import { EMPTY_GUID, emptyToNull, normaliseKey, parseIntOr, stripBom, udiEntityType, variations } from '../util.js';
+import { EMPTY_GUID, emptyToNull, normaliseKey, parseIntOr, stripBom, udiEntityType } from '../util.js';
 
 type Artifact = Record<string, any>;
 
@@ -86,7 +86,6 @@ function parseContentType(
 
 	const addProperties = (list: Artifact[] | undefined, containerKey: string | null) => {
 		for (const p of list ?? []) {
-			const pv = variations(p.Variations);
 			properties.push({
 				key: normaliseKey(p.Key) ?? `${key}:${p.Alias}`,
 				alias: p.Alias ?? '',
@@ -101,8 +100,8 @@ function parseContentType(
 				regEx: emptyToNull(p.Validation),
 				regExMessage: emptyToNull(p.ValidationMessage ?? p.ValidationRegExpMessage),
 				labelOnTop: p.LabelOnTop === true,
-				variesByCulture: pv.culture,
-				variesBySegment: pv.segment,
+				variesByCulture: p.VariesByCulture === true,
+				variesBySegment: p.VariesBySegment === true,
 			});
 		}
 	};
@@ -128,7 +127,7 @@ function parseContentType(
 		if (slash > 0) c.parentKey = byAlias.get(c.alias.slice(0, slash))?.key ?? null;
 	}
 
-	const vary = variations(a.Variations);
+	// Deploy omits false booleans, so a missing field means the type does not vary.
 	const perms = a.Permissions ?? {};
 	const listView = normaliseKey(a.ListView);
 	const defaultTemplate = normaliseKey(a.DefaultTemplate);
@@ -148,8 +147,8 @@ function parseContentType(
 		icon: a.Icon ?? 'icon-document',
 		isElement: perms.IsElementType === true || a.IsElement === true,
 		allowedAtRoot: perms.AllowedAtRoot === true,
-		variesByCulture: vary.culture,
-		variesBySegment: vary.segment,
+		variesByCulture: perms.AllowVaryingByCulture === true,
+		variesBySegment: perms.AllowVaryingBySegment === true,
 		folder: parentIsFolder ? parentKey : null,
 		listView: listView && listView !== EMPTY_GUID ? listView : null,
 		compositions,
