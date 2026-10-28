@@ -181,6 +181,54 @@ describe('deploy specifics', () => {
 	});
 });
 
+describe('deploy variation', () => {
+	it('reads culture and segment booleans, treating missing as false', () => {
+		const snapshot = buildSnapshot([
+			{
+				path: '/x/umbraco/Deploy/Revision/document-type__aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.uda',
+				content: JSON.stringify({
+					Name: 'Variant',
+					Alias: 'variant',
+					Permissions: { AllowVaryingByCulture: true, AllowVaryingBySegment: true },
+					PropertyGroups: [
+						{
+							Key: '808d1326-0001-4a00-8000-000000000001',
+							Name: 'Content',
+							Alias: 'content',
+							PropertyTypes: [
+								{ Key: '1552cf3a-0001-4a00-8000-000000000001', Alias: 'both', VariesByCulture: true, VariesBySegment: true },
+								{ Key: '1552cf3a-0001-4a00-8000-000000000002', Alias: 'none' },
+							],
+						},
+					],
+					PropertyTypes: [{ Key: '1552cf3a-0001-4a00-8000-000000000003', Alias: 'rootCulture', VariesByCulture: true }],
+					Udi: 'umb://document-type/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+				}),
+			},
+			{
+				path: '/x/umbraco/Deploy/Revision/document-type__bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.uda',
+				content: JSON.stringify({
+					Name: 'Invariant',
+					Alias: 'invariant',
+					PropertyGroups: [],
+					PropertyTypes: [],
+					Udi: 'umb://document-type/bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
+				}),
+			},
+		]);
+		const variant = snapshot.contentTypes.get('aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa')!;
+		expect(variant.variesByCulture).toBe(true);
+		expect(variant.variesBySegment).toBe(true);
+		const props = Object.fromEntries(variant.properties.map((p) => [p.alias, p]));
+		expect(props.both).toMatchObject({ variesByCulture: true, variesBySegment: true });
+		expect(props.none).toMatchObject({ variesByCulture: false, variesBySegment: false });
+		expect(props.rootCulture).toMatchObject({ variesByCulture: true, variesBySegment: false });
+		const invariant = snapshot.contentTypes.get('bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb')!;
+		expect(invariant.variesByCulture).toBe(false);
+		expect(invariant.variesBySegment).toBe(false);
+	});
+});
+
 describe('detectUmbracoMajor', () => {
 	it('prefers project files', () => {
 		expect(

@@ -168,6 +168,7 @@ export class UprContentTypePreviewElement extends UmbLitElement {
 						<span title=${uiAlias}>${dataType?.name ?? `Missing data type ${p.dataTypeKey}`}</span>
 						${inheritedFrom ? html`<small class="inherited">from ${inheritedFrom.name}</small>` : nothing}
 						${p.variesByCulture ? html`<small>varies by culture</small>` : nothing}
+						${p.variesBySegment ? html`<small>varies by segment</small>` : nothing}
 						${diff
 							? html`<upr-diff-badge .status=${diff.status} .fields=${diff.fields} title=${describeFields(diff.fields)}></upr-diff-badge>`
 							: nothing}

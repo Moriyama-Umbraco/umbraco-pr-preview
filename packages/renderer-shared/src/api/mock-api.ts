@@ -62,7 +62,7 @@ export function createMockApi(snapshot: SchemaSnapshot) {
 		],
 
 		// Static backoffice configuration some editors read on connect.
-		[/^(document|media|member)-type\/configuration$/, () => ({ dataTypesCanBeChanged: 'True', disableTemplates: false, useSegments: false, reservedFieldNames: [] })],
+		[/^(document|media|member)-type\/configuration$/, () => ({ dataTypesCanBeChanged: 'True', disableTemplates: false, useSegments: [...snapshot.contentTypes.values()].some((c) => c.variesBySegment || c.properties.some((p) => p.variesBySegment)), reservedFieldNames: [] })],
 		[/^data-type\/configuration$/, () => ({ canBeChanged: 'True', documentListViewId: '', mediaListViewId: '' })],
 		[/^language$/, () => paged([{ isoCode: 'en-US', name: 'English (United States)', isDefault: true, isMandatory: true, fallbackIsoCode: null }])],
 		[/^item\/language$/, () => [{ isoCode: 'en-US', name: 'English (United States)' }]],
