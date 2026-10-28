@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "umbraco-pr-preview",
   "name": "Umbraco PR Preview",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "publisher": "Moriyama",
   "public": true,
   "description": "Renders changed uSync and Umbraco Deploy data types and document types in a pull request tab, using the real Umbraco backoffice editors, side by side with the target branch.",
